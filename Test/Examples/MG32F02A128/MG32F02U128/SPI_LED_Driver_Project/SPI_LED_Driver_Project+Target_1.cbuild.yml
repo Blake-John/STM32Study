@@ -1,0 +1,243 @@
+build:
+  generated-by: csolution version 2.2.1
+  solution: SPI_LED_Driver_Project.csolution.yml
+  project: SPI_LED_Driver_Project.cproject.yml
+  context: SPI_LED_Driver_Project+Target_1
+  compiler: AC6
+  device: MG32F02U128
+  device-pack: Megawin::CM0_DFP@4.2.0
+  processor:
+    endian: little
+    fpu: off
+    trustzone: non-secure
+    core: Cortex-M0
+  packs:
+    - pack: ARM::CMSIS@6.0.0
+      path: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.0.0
+    - pack: Megawin::CM0_DFP@4.2.0
+      path: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0
+  optimize: none
+  debug: on
+  misc:
+    C:
+      - -std=c99
+      - -fno-rtti
+      - -funsigned-char
+      - -fshort-enums
+      - -fshort-wchar
+      - -ffunction-sections
+      - -Weverything
+      - -Wno-packed
+      - -Wno-reserved-id-macro
+      - -Wno-unused-macros
+      - -Wno-documentation-unknown-command
+      - -Wno-documentation
+      - -Wno-license-management
+      - -Wno-parentheses-equality
+    CPP:
+      - -xc++
+      - -std=c++11
+      - -fno-rtti
+      - -funsigned-char
+      - -fshort-enums
+      - -fshort-wchar
+      - -ffunction-sections
+      - -Weverything
+      - -Wno-packed
+      - -Wno-reserved-id-macro
+      - -Wno-unused-macros
+      - -Wno-documentation-unknown-command
+      - -Wno-documentation
+      - -Wno-license-management
+      - -Wno-parentheses-equality
+    Link:
+      - --library_type=microlib
+      - --map
+      - --load_addr_map_info
+      - --xref
+      - --callgraph
+      - --symbols
+      - --info sizes
+      - --info totals
+      - --info unused
+      - --info veneers
+      - --strict
+      - --summary_stderr
+      - --info summarysizes
+  define:
+    - __MICROLIB
+    - MG32F02U128
+    - _RTE_
+  add-path:
+    - User/Include
+    - RTE/ChipInit_Wizard/MG32F02U128
+    - RTE/Device/MG32F02U128
+    - RTE/_Target_1
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.0.0/CMSIS/Core/Include
+    - ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/Common/Startup
+    - ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A128/Include
+    - ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A128/MG32x02z_ConfigerWizard/Include
+    - ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Include
+    - ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Sample/Driver/Include
+  output-dirs:
+    intdir: tmp/SPI_LED_Driver_Project/Target_1
+    outdir: out/SPI_LED_Driver_Project/Target_1
+    rtedir: RTE
+  output:
+    - type: elf
+      file: SPI_LED_Driver_Project.axf
+  components:
+    - component: ARM::CMSIS:CORE@6.0.0
+      condition: ARMv6_7_8-M Device
+      from-pack: ARM::CMSIS@6.0.0
+      selected-by: ARM::CMSIS:CORE
+    - component: Megawin::ChipInit_Wizard:CSC@1.0.4
+      condition: CSC_INIT_MG32F02U128
+      from-pack: Megawin::CM0_DFP@4.2.0
+      selected-by: Megawin::ChipInit_Wizard:CSC
+      files:
+        - file: RTE/ChipInit_Wizard/MG32F02U128/MG32x02z_CSC_Init.c
+          category: sourceC
+          attr: config
+          version: 1.1.1
+        - file: RTE/ChipInit_Wizard/MG32F02U128/MG32x02z_CSC_Init.h
+          category: header
+          attr: config
+          version: 1.0.6
+    - component: Megawin::ChipInit_Wizard:GPIO&LQFP80U@1.0.0
+      condition: ChipInit_U128_GPIO
+      from-pack: Megawin::CM0_DFP@4.2.0
+      selected-by: Megawin::ChipInit_Wizard:GPIO&LQFP80U
+      files:
+        - file: RTE/ChipInit_Wizard/MG32F02U128/MG32x02z_ChipInit.h
+          category: header
+          attr: config
+          version: 1.0.6
+        - file: RTE/ChipInit_Wizard/MG32F02U128/MG32x02z_ChipInit.c
+          category: sourceC
+          attr: config
+          version: 1.1.0
+        - file: RTE/ChipInit_Wizard/MG32F02U128/MG32x02z_GPIO_Init.c
+          category: sourceC
+          attr: config
+          version: 1.0.0
+        - file: RTE/ChipInit_Wizard/MG32F02U128/MG32x02z_GPIO_LQFP80U_Init.h
+          category: header
+          attr: config
+          version: 1.0.0
+    - component: Megawin::Device:Startup@1.0.4
+      condition: DNAME_U128 CMSIS
+      from-pack: Megawin::CM0_DFP@4.2.0
+      selected-by: Megawin::Device:Startup
+      misc:
+        ASM:
+          - -masm=auto
+      files:
+        - file: RTE/Device/MG32F02U128/startup_MG32x02z.s
+          category: sourceAsm
+          attr: config
+          version: 1.0.1
+        - file: RTE/Device/MG32F02U128/system_MG32x02z.c
+          category: sourceC
+          attr: config
+          version: 1.0.2
+        - file: RTE/Device/MG32F02U128/system_MG32x02z.h
+          category: header
+          attr: config
+          version: 1.0.1
+        - file: RTE/Device/MG32F02U128/MG32x02z_Ex.h
+          category: header
+          attr: config
+          version: 1.0.0
+    - component: Megawin::Driver:Driver-All@1.0.1
+      condition: DNAME_DRIVER_128
+      from-pack: Megawin::CM0_DFP@4.2.0
+      selected-by: Megawin::Driver:Driver-All
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_ADC_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_APB_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_APX_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_CFG_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_CM0_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_CMP_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_CSC_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_DAC_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_DMA_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_EMB_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_EXIC_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_GPIO_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_GPL_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_I2C_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_IWDT_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_MEM_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_PW_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_RST_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_RTC_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_SPI_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_SYS_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_TM_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_URT_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_USB_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z_WWDT_DRV.c
+          category: sourceC
+        - file: ${CMSIS_PACK_ROOT}/Megawin/CM0_DFP/4.2.0/Device/MG32x02z/MG32F02A_Driver/Source/MG32x02z__Common_DRV.c
+          category: sourceC
+  linker:
+    script: SPI_LED_Driver_Project_Target_1.sct
+  groups:
+    - group: Main
+      files:
+        - file: User/Source/main.c
+          category: sourceC
+    - group: RGB
+      files:
+        - file: User/Source/MG32x02z_RGB_API.c
+          category: sourceC
+        - file: User/Source/MG32x02z_RGB_MBIA045_API.c
+          category: sourceC
+        - file: User/Source/MG32x02z_RGB_TLC5948_API.c
+          category: sourceC
+        - file: User/Source/MG32x02z_RGBTable_API.c
+          category: sourceC
+  constructed-files:
+    - file: RTE/_Target_1/RTE_Components.h
+      category: header
+  licenses:
+    - license: <unknown>
+      license-agreement: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.0.0/LICENSE
+      packs:
+        - pack: ARM::CMSIS@6.0.0
+      components:
+        - component: ARM::CMSIS:CORE@6.0.0
+    - license: <unknown>
+      packs:
+        - pack: Megawin::CM0_DFP@4.2.0
+      components:
+        - component: Megawin::ChipInit_Wizard:CSC@1.0.4
+        - component: Megawin::ChipInit_Wizard:GPIO&LQFP80U@1.0.0
+        - component: Megawin::Device:Startup@1.0.4
+        - component: Megawin::Driver:Driver-All@1.0.1

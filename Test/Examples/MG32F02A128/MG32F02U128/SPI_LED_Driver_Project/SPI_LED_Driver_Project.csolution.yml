@@ -1,0 +1,10 @@
+solution:
+  created-by: uv2csolution@1.2.0
+  created-for: CMSIS-Toolbox@2.0.0
+  compiler: AC6
+  target-types:
+    - type: Target_1
+      device: MG32F02U128
+      optimize: none
+  projects:
+    - project: SPI_LED_Driver_Project.cproject.yml

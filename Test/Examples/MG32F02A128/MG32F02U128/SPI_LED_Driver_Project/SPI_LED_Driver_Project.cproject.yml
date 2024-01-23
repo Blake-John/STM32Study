@@ -1,0 +1,70 @@
+project:
+  packs:
+    - pack: Megawin::CM0_DFP
+    - pack: ARM::CMSIS
+    - pack: ARM::CMSIS-NN
+    - pack: ARM::CMSIS-DSP
+  setups:
+    - setup: Options for Target_1
+      processor:
+        trustzone: non-secure
+      add-path:
+        - User/Include
+      debug: "on"
+      define:
+        - __MICROLIB
+      misc:
+        - C:
+            - -std=c99
+          C-CPP:
+            - -fno-rtti
+            - -funsigned-char
+            - -fshort-enums
+            - -fshort-wchar
+            - -ffunction-sections
+            - -Weverything
+            - -Wno-packed
+            - -Wno-reserved-id-macro
+            - -Wno-unused-macros
+            - -Wno-documentation-unknown-command
+            - -Wno-documentation
+            - -Wno-license-management
+            - -Wno-parentheses-equality
+          CPP:
+            - -xc++
+            - -std=c++11
+          Link:
+            - --library_type=microlib
+            - --map
+            - --load_addr_map_info
+            - --xref
+            - --callgraph
+            - --symbols
+            - --info sizes
+            - --info totals
+            - --info unused
+            - --info veneers
+            - --strict
+            - --summary_stderr
+            - --info summarysizes
+  linker:
+    - script: SPI_LED_Driver_Project_Target_1.sct
+  groups:
+    - group: Main
+      files:
+        - file: User/Source/main.c
+    - group: RGB
+      files:
+        - file: User/Source/MG32x02z_RGB_API.c
+        - file: User/Source/MG32x02z_RGB_MBIA045_API.c
+        - file: User/Source/MG32x02z_RGB_TLC5948_API.c
+        - file: User/Source/MG32x02z_RGBTable_API.c
+  components:
+    - component: ARM::CMSIS:CORE
+    - component: Megawin::ChipInit_Wizard:CSC
+    - component: Megawin::ChipInit_Wizard:GPIO&LQFP80U
+    - component: Megawin::Device:Startup
+      misc:
+        - ASM:
+            - -masm=auto
+    - component: Megawin::Driver:Driver-All

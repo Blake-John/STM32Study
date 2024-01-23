@@ -1,0 +1,31 @@
+# CMSIS Build Audit File generated on 2024-01-12T16:10:05
+
+# Project Description File: d:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/SPI_LED_Driver_Project+Target_1.cprj
+
+# Toolchain Configuration File: C:/Users/Zero/.vcpkg/artifacts/fd3d78d7/tools.open.cmsis.pack.cmsis.toolbox/2.2.1/etc/AC6.6.18.0.cmake
+
+# Package: ARM::CMSIS@6.0.0
+  Location: C:\Users\Zero\AppData\Local\arm\packs/ARM/CMSIS/6.0.0/
+
+  * Component: ARM::CMSIS:CORE@6.0.0
+
+# Package: Megawin::CM0_DFP@4.2.0
+  Location: C:\Users\Zero\AppData\Local\arm\packs/Megawin/CM0_DFP/4.2.0/
+
+  * Component: Megawin::ChipInit_Wizard:CSC@1.0.4
+    - ConfigFile: d:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/RTE/ChipInit_Wizard/MG32F02U128/MG32x02z_CSC_Init.c:1.1.1
+    - ConfigFile: d:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/RTE/ChipInit_Wizard/MG32F02U128/MG32x02z_CSC_Init.h:1.0.6
+
+  * Component: Megawin::ChipInit_Wizard:GPIO&LQFP80U@1.0.0
+    - ConfigFile: d:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/RTE/ChipInit_Wizard/MG32F02U128/MG32x02z_ChipInit.c:1.1.0
+    - ConfigFile: d:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/RTE/ChipInit_Wizard/MG32F02U128/MG32x02z_ChipInit.h:1.0.6
+    - ConfigFile: d:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/RTE/ChipInit_Wizard/MG32F02U128/MG32x02z_GPIO_Init.c:1.0.0
+    - ConfigFile: d:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/RTE/ChipInit_Wizard/MG32F02U128/MG32x02z_GPIO_LQFP80U_Init.h:1.0.0
+
+  * Component: Megawin::Device:Startup@1.0.4
+    - ConfigFile: d:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/RTE/Device/MG32F02U128/MG32x02z_Ex.h:1.0.0
+    - ConfigFile: d:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/RTE/Device/MG32F02U128/startup_MG32x02z.s:1.0.1
+    - ConfigFile: d:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/RTE/Device/MG32F02U128/system_MG32x02z.c:1.0.2
+    - ConfigFile: d:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/RTE/Device/MG32F02U128/system_MG32x02z.h:1.0.1
+
+  * Component: Megawin::Driver:Driver-All@1.0.1

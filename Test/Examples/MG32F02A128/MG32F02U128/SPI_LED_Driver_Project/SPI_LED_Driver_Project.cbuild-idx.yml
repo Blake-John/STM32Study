@@ -1,0 +1,9 @@
+build-idx:
+  generated-by: csolution version 2.2.1
+  csolution: SPI_LED_Driver_Project.csolution.yml
+  cprojects:
+    - cproject: SPI_LED_Driver_Project.cproject.yml
+  cbuilds:
+    - cbuild: SPI_LED_Driver_Project+Target_1.cbuild.yml
+      project: SPI_LED_Driver_Project
+      configuration: +Target_1

@@ -1,0 +1,4 @@
+D:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/tmp/SPI_LED_Driver_Project/Target_1/CMakeFiles/database.dir
+D:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/tmp/SPI_LED_Driver_Project/Target_1/CMakeFiles/SPI_LED_Driver_Project.dir
+D:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/tmp/SPI_LED_Driver_Project/Target_1/CMakeFiles/edit_cache.dir
+D:/STM32/Test/Examples/MG32F02A128/MG32F02U128/SPI_LED_Driver_Project/tmp/SPI_LED_Driver_Project/Target_1/CMakeFiles/rebuild_cache.dir

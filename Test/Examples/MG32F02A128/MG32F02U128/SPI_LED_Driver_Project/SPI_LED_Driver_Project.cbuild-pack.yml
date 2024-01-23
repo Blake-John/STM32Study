@@ -1,0 +1,14 @@
+cbuild-pack:
+  resolved-packs:
+    - resolved-pack: ARM::CMSIS@6.0.0
+      selected-by:
+        - ARM::CMSIS
+    - resolved-pack: ARM::CMSIS-DSP@1.15.0
+      selected-by:
+        - ARM::CMSIS-DSP
+    - resolved-pack: ARM::CMSIS-NN@4.1.0
+      selected-by:
+        - ARM::CMSIS-NN
+    - resolved-pack: Megawin::CM0_DFP@4.2.0
+      selected-by:
+        - Megawin::CM0_DFP
